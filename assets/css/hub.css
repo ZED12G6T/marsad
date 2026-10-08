@@ -35,6 +35,9 @@
   transform: rotate(-45deg) translate(2px, -2px);
 }
 .enter:hover { border-bottom-color: var(--brass-hi); }
+.hero-links { display: flex; flex-wrap: wrap; gap: 14px 36px; align-items: center; }
+.enter-alt { color: var(--parchment-soft); border-bottom-color: var(--dust-faint); }
+.enter-alt::after { transform: rotate(45deg) translate(-2px, 2px); border-bottom: 0; border-left: 0; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; }
 
 /* ---------- Catalog: entries hung on a scale ruler ---------- */
 .catalog {

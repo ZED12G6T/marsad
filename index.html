@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>مرصد</title>
-<meta name="description" content="خمس تجارب علمية ثلاثية الأبعاد تُحسب لحظياً في متصفحك: ذرة الهيدروجين، كوكب يتولّد من العدم، ثقب أسود، تصادم مجرتين، وفراكتل لا ينتهي.">
+<meta name="description" content="إحدى عشرة تجربة علمية ثلاثية الأبعاد تُحسب لحظياً في متصفحك: من ذرة الهيدروجين ولوحة كلادني إلى ذات الحلق والثقب الأسود وتصادم المجرات والبعد الرابع.">
 <meta property="og:title" content="مرصد">
-<meta property="og:description" content="خمس تجارب علمية ثلاثية الأبعاد تُحسب لحظياً في متصفحك.">
-<meta property="og:image" content="assets/thumbs/black-hole.jpg">
+<meta property="og:description" content="إحدى عشرة تجربة علمية ثلاثية الأبعاد تُحسب لحظياً في متصفحك.">
+<meta property="og:image" content="assets/thumbs/armillary.jpg">
 <meta name="theme-color" content="#070b1d">
 <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +27,11 @@
   <canvas id="sky" aria-hidden="true"></canvas>
   <div class="hero-text">
     <h1 class="mark">مَرصَد</h1>
-    <p class="lede">خمس تجارب علمية تُحسب أمامك لحظة بلحظة على كرت الشاشة. لا صور فيها ولا فيديو: كل ما تراه يخرج من معادلات الفيزياء والرياضيات، وتستطيع أن تغيّرها بيدك.</p>
-    <a class="enter" href="#catalog">ابدأ من الذرة</a>
+    <p class="lede">إحدى عشرة تجربة علمية تُحسب أمامك لحظة بلحظة على كرت الشاشة. لا صور فيها ولا فيديو: كل ما تراه يخرج من معادلات الفيزياء والرياضيات، وتستطيع أن تغيّرها بيدك.</p>
+    <div class="hero-links">
+      <a class="enter" href="#catalog">ابدأ من الذرة</a>
+      <a class="enter enter-alt" href="exhibits/armillary/">افتح ذات الحلق</a>
+    </div>
   </div>
 </header>
 
@@ -38,7 +41,7 @@
     <li class="entry">
       <a href="exhibits/atom/">
         <span class="mag"><bdi class="num">10<sup>−10</sup></bdi> م</span>
-        <figure><img src="assets/thumbs/atom.jpg" alt="سحابة احتمال ملوّنة لمدار إلكترون في ذرة الهيدروجين" width="1280" height="720" loading="lazy"></figure>
+        <figure><img src="assets/thumbs/atom.jpg" alt="مدار إلكترون مركّب في ذرة الهيدروجين بألوان قوس قزح تمثل طور الموجة" width="1280" height="720" loading="lazy"></figure>
         <div class="entry-text">
           <h2>ذرة الهيدروجين</h2>
           <p>إلكترون واحد حول بروتون واحد، مرسوم من حل معادلة شرودنغر. ركّب حالتين فوق بعضهما وشاهد السحابة تتأرجح، فهذا التأرجح هو ما يُطلق الضوء.</p>
@@ -47,12 +50,56 @@
       </a>
     </li>
     <li class="entry">
-      <a href="exhibits/planet/">
-        <span class="mag"><bdi class="num">10<sup>7</sup></bdi> م</span>
-        <figure><img src="assets/thumbs/planet.jpg" alt="كوكب بمحيطات وقارات وغيوم يحيط به غلاف جوي أزرق" width="1280" height="720" loading="lazy"></figure>
+      <a href="exhibits/chladni/">
+        <span class="mag"><bdi class="num">10<sup>−1</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/chladni.jpg" alt="رمل أبيض يرسم خطوطاً منحنية على لوح معدني أسود يهتز" width="1280" height="720" loading="lazy"></figure>
         <div class="entry-text">
-          <h2>كوكب من العدم</h2>
-          <p>قارات وجبال ومحيطات وغيوم تتولّد من الرياضيات، وغلاف جوي يحسب تشتت الضوء فيصير الغروب برتقالياً. انزل إلى السطح، أو ولّد كوكباً لم يره أحد قبلك.</p>
+          <h2>لوحة كلادني</h2>
+          <p>رمل على لوح معدني يهتز بنغمة واحدة، فيهرب من المناطق المهتزة ويستقر على الخطوط الساكنة. غيّر النغمة واسمعها، وشاهد الرمل يرسم شكلاً جديداً عند كل رنين.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/flock/">
+        <span class="mag"><bdi class="num">10<sup>2</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/flock.jpg" alt="سرب كبير من الطيور الداكنة فوق غابة عند الغروب" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>سرب الطيور</h2>
+          <p>آلاف الطيور، كل منها يراقب سبعة من جيرانه فقط ولا قائد بينها، ومن ثلاث قواعد بسيطة يخرج سرب يتموّج ككائن واحد. أطلق الصقر وشاهد موجات الهروب.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/chaos/">
+        <span class="mag"><bdi class="num">10<sup>4</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/chaos.jpg" alt="جاذب لورنز مرسوماً بمئات الخيوط المضيئة على شكل جناحي فراشة" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>الفوضى</h2>
+          <p>ثلاث معادلات من نموذج للطقس ترسم جناحي فراشة لا يمر مسارها بالنقطة نفسها مرتين. أطلق مسارين متلاصقين وشاهدهما يفترقان: هذا سبب عجزنا عن توقع الطقس بعد أيام.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/waves/">
+        <span class="mag"><bdi class="num">10<sup>5</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/waves.jpg" alt="ثقبان أسودان فوق شبكة تتموج حولهما موجات الجاذبية" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>موجات الجاذبية</h2>
+          <p>ثقبان أسودان يدوران ويقتربان حتى يندمجا، والزمكان يتموّج حولهما. اسمع «زقزقة» الاندماج كما التقطها مرصد LIGO عام ٢٠١٥.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/armillary/">
+        <span class="mag"><bdi class="num">10<sup>7</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/armillary.jpg" alt="كرة ذات حلق نحاسية تحمل النجوم والكوكبات ودائرة البروج" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>ذات الحلق</h2>
+          <p>سماؤك الحقيقية فوق مدينتك: نجوم بأسمائها العربية، وأوقات الصلاة تُقرأ من موضع الشمس، والقبلة. ثم تنفرد الكرة أمامك فتصير أسطرلاباً تستخدمه كما استخدمه الفلكيون.</p>
           <span class="go">افتح التجربة</span>
         </div>
       </a>
@@ -69,6 +116,28 @@
       </a>
     </li>
     <li class="entry">
+      <a href="exhibits/gravity/">
+        <span class="mag"><bdi class="num">10<sup>11</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/gravity.jpg" alt="نجم تدور حوله كواكب وحزام كويكبات فوق شبكة منحنية" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>ساحة الجاذبية</h2>
+          <p>ارمِ نجوماً وكواكب بيدك وشاهد قانون نيوتن وحده يصنع المدارات والاصطدامات والفوضى. جرّب رقصة الثمانية ونقاط لاغرانج.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/orrery/">
+        <span class="mag"><bdi class="num">10<sup>13</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/orrery.jpg" alt="آلة نحاسية بتروس تحمل الشمس والكواكب على أذرع" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>المجموعة الشمسية</h2>
+          <p>آلة نحاسية بتروس تحرك الكواكب إلى مواقعها الفعلية في أي تاريخ. أدر المقبض بيدك، وشاهد المريخ يرجع إلى الخلف في السماء.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
       <a href="exhibits/galaxies/">
         <span class="mag"><bdi class="num">10<sup>21</sup></bdi> م</span>
         <figure><img src="assets/thumbs/galaxies.jpg" alt="مجرتان حلزونيتان تتمزقان أثناء التصادم وتخرج منهما ذيول من النجوم" width="1280" height="720" loading="lazy"></figure>
@@ -80,12 +149,12 @@
       </a>
     </li>
     <li class="entry entry-last">
-      <a href="exhibits/fractal/">
+      <a href="exhibits/fourd/">
         <span class="mag mag-inf">∞</span>
-        <figure><img src="assets/thumbs/fractal.jpg" alt="شكل مندلبلب النحاسي بتفاصيل متكررة لا تنتهي" width="1280" height="720" loading="lazy"></figure>
+        <figure><img src="assets/thumbs/fourd.jpg" alt="مكعب رباعي الأبعاد مرسوم بخطوط مضيئة" width="1280" height="720" loading="lazy"></figure>
         <div class="entry-text">
-          <h2>فراكتل لا ينتهي</h2>
-          <p>أشكال ثلاثية الأبعاد من معادلة سطر واحد. انقر مرتين على أي نتوء لتنغمس فيه، وستجد تحته عالماً بنفس التعقيد، مهما قرّبت.</p>
+          <h2>البعد الرابع</h2>
+          <p>أشكال من أربعة أبعاد تدور في اتجاهات لا يتخيلها العقل، وما تراه ظلالها في عالمنا. ومعها شرائحها حين تعبر عالمنا، وتليّف هوبف بدوائره المتشابكة.</p>
           <span class="go">افتح التجربة</span>
         </div>
       </a>
