@@ -1,0 +1,76 @@
+/* CSS2DRenderer positions labels by transform from the top-left corner; in an RTL page an
+   absolutely positioned box would otherwise start at the right edge. */
+.labels { position: fixed !important; inset: 0; pointer-events: none; z-index: 2; direction: ltr; }
+.lbl { left: 0; top: 0; font-family: var(--font); color: var(--parchment); white-space: nowrap; pointer-events: none; text-shadow: 0 0 6px #000, 0 0 3px #000; }
+.lbl span { display: inline-block; direction: rtl; }
+.lbl-star { font-size: 12px; color: #dfe5ff; }
+.lbl-star span { transform: translateY(-13px); }
+.lbl-const { font-size: 11.5px; color: #8796c8; }
+.lbl-zodiac { font-size: 13px; font-weight: 500; color: var(--brass-hi); }
+.lbl-compass { font-size: 15px; font-weight: 600; color: var(--brass-hi); }
+.lbl-qibla { font-size: 14px; font-weight: 700; color: #f3d48b; }
+.lbl-sun { font-size: 13px; font-weight: 600; color: #ffd98a; }
+.lbl-sun span { transform: translateY(-20px); }
+.lbl-hour { font-size: 11px; color: var(--brass-hi); }
+.lbl-prayer span {
+  font-size: 11.5px; font-weight: 600; padding: 0 8px; border-radius: 999px;
+  background: rgba(7, 11, 29, 0.72); border: 1px solid currentColor; transform: translateY(-14px);
+}
+.lbl-p-fajr { color: #6fd6c6; }
+.lbl-p-sunrise { color: #f19a8a; }
+.lbl-p-dhuhr { color: #f3d48b; }
+.lbl-p-asr { color: #f0b25f; }
+.lbl-p-maghrib { color: #f19a8a; }
+.lbl-p-isha { color: #9fb1ff; }
+.lbl-hover span {
+  font-size: 13px; padding: 3px 10px; border-radius: 8px; transform: translateY(-26px);
+  background: rgba(7, 11, 29, 0.88); border: 1px solid var(--brass-line); color: var(--parchment);
+}
+
+.prayers {
+  position: fixed; right: 26px; top: 196px; z-index: 5; width: 250px;
+  padding: 14px 16px 12px; border-radius: 14px;
+  background: var(--panel-bg); border: 1px solid var(--brass-faint);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  font-size: 14px; line-height: 1.6; transition: opacity 0.5s;
+}
+.pc-place { font-weight: 600; color: var(--brass-hi); font-size: 15px; }
+.pc-date { color: var(--dust); font-size: 12.5px; margin-bottom: 8px; }
+.prayers ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; }
+.prayers li { display: flex; justify-content: space-between; padding: 2px 8px; border-radius: 8px; }
+.prayers li.next { background: rgba(201, 164, 94, 0.2); color: var(--brass-hi); font-weight: 600; }
+.prayers .t { font-variant-numeric: tabular-nums; unicode-bidi: plaintext; }
+.pc-qibla { margin-top: 8px; font-size: 12.5px; color: var(--parchment-soft); }
+.pc-method { margin-top: 2px; font-size: 11.5px; color: var(--dust); }
+
+.star-card {
+  position: fixed; left: 16px; bottom: 20px; z-index: 7; width: min(360px, calc(100vw - 32px));
+  padding: 18px 20px 16px; border-radius: 16px;
+  background: rgba(8, 13, 34, 0.92); border: 1px solid var(--brass-line);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+}
+.star-card[hidden] { display: none; }
+.star-card h2 { margin: 0; font-size: 24px; font-weight: 700; color: var(--brass-hi); line-height: 1.3; }
+.sc-en { color: var(--dust); font-size: 13.5px; margin-bottom: 10px; }
+.star-card dl { margin: 0 0 8px; display: grid; gap: 2px; }
+.star-card dl div { display: flex; justify-content: space-between; font-size: 14px; }
+.star-card dt { color: var(--dust); }
+.star-card dd { margin: 0; font-variant-numeric: tabular-nums; }
+.star-card p { margin: 8px 0 0; font-size: 15px; line-height: 1.85; color: var(--parchment-soft); }
+.sc-close { position: absolute; top: 14px; left: 14px; }
+
+.ctl select {
+  width: 100%; margin-top: 6px; padding: 7px 12px; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--dust-faint);
+  color: var(--parchment); font-family: var(--font); font-size: 14px;
+}
+.ctl select option { background: var(--lapis); }
+
+body.ui-hidden .prayers, body.ui-hidden .star-card, body.ui-hidden .labels { opacity: 0; pointer-events: none; }
+
+@media (max-width: 760px) {
+  .prayers { top: 128px; right: 12px; width: 190px; padding: 10px 12px; font-size: 12.5px; }
+  .pc-date, .pc-method { display: none; }
+  .star-card { left: 12px; right: 12px; bottom: 80px; width: auto; }
+}

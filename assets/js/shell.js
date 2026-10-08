@@ -108,6 +108,23 @@ export function createShell(cfg) {
         item.set = (v) => { values[key] = v; };
         break;
       }
+      case 'select': {
+        values[key] = def.value;
+        const sel = el('select', { 'aria-label': def.label || '' });
+        for (const o of def.options) {
+          const opt = el('option', { value: String(o.value) }, o.label);
+          sel.append(opt);
+        }
+        sel.value = String(def.value);
+        sel.addEventListener('change', () => {
+          const o = def.options.find((x) => String(x.value) === sel.value);
+          values[key] = o ? o.value : sel.value;
+          changed(key);
+        });
+        item.wrap = el('div', { class: 'ctl' }, def.label ? el('div', { class: 'ctl-row' }, el('span', {}, def.label)) : null, sel);
+        item.set = (v) => { values[key] = v; sel.value = String(v); };
+        break;
+      }
       case 'buttons': {
         item.wrap = el('div', { class: 'ctl btn-row' }, def.items.map((it) => {
           const b = el('button', { class: 'btn' + (it.primary ? ' primary' : ''), type: 'button' }, it.label);
@@ -154,12 +171,12 @@ export function createShell(cfg) {
   infoBtn.addEventListener('click', () => setInfo(!drawer.classList.contains('open')));
   closeBtn.addEventListener('click', () => setInfo(false));
 
-  // Hint
-  const hintEl = hint ? el('div', { class: 'hint' }, hint) : null;
-  const dismissHint = () => hintEl && hintEl.classList.add('gone');
-  setTimeout(dismissHint, 9000);
+  // Hint (also reused for short toasts)
+  const hintEl = el('div', { class: 'hint' + (hint ? '' : ' gone'), role: 'status' }, hint || '');
+  const dismissHint = () => hintEl.classList.add('gone');
+  let hintTimer = setTimeout(dismissHint, 9000);
 
-  document.body.append(head, panel, roWrap, drawer, ...(hintEl ? [hintEl] : []), loader);
+  document.body.append(head, panel, roWrap, drawer, hintEl, loader);
   document.getElementById('stage')?.addEventListener('pointerdown', dismissHint, { once: true });
 
   document.addEventListener('keydown', (e) => {
@@ -186,6 +203,12 @@ export function createShell(cfg) {
       if (n && n.textContent !== text) n.textContent = text;
     },
     readoutEl(key) { return roVals[key]; },
+    toast(text, ms = 4000) {
+      clearTimeout(hintTimer);
+      hintEl.textContent = text;
+      hintEl.classList.remove('gone');
+      hintTimer = setTimeout(dismissHint, ms);
+    },
     on(fn) { listeners.push(fn); },
     refresh,
     loading(text) { loaderText.textContent = text; },

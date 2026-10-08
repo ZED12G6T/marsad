@@ -13,7 +13,7 @@
   max-width: 720px;
 }
 .mark {
-  font-family: var(--kufi); font-weight: 700;
+  font-family: var(--font); font-weight: 700;
   font-size: clamp(96px, 17vw, 220px); line-height: 1;
   margin: 0 0 0.1em; color: var(--parchment);
   text-shadow: 0 4px 60px rgba(7, 11, 29, 0.9);
@@ -25,7 +25,7 @@
 }
 .enter {
   display: inline-flex; align-items: center; gap: 14px;
-  font-family: var(--kufi); font-size: 18px; color: var(--brass-hi);
+  font-family: var(--font); font-size: 18px; color: var(--brass-hi);
   text-decoration: none; padding: 10px 0;
   border-bottom: 1px solid var(--brass-line);
 }
@@ -66,7 +66,7 @@
 .mag {
   position: relative; z-index: 1;
   justify-self: center;
-  font-family: var(--kufi); font-size: 21px; color: var(--brass-hi);
+  font-family: var(--font); font-size: 21px; color: var(--brass-hi);
   background: var(--night); padding: 8px 4px; white-space: nowrap;
 }
 .mag sup { font-size: 0.62em; }
@@ -80,13 +80,13 @@
 .entry img { display: block; width: 100%; height: 100%; object-fit: cover; transition: filter 0.4s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .entry a:hover img, .entry a:focus-visible img { filter: brightness(1.12) saturate(1.08); transform: scale(1.025); }
 .entry h2 {
-  font-family: var(--kufi); font-weight: 600;
+  font-family: var(--font); font-weight: 600;
   font-size: clamp(28px, 3.2vw, 42px); line-height: 1.25;
   margin: 0 0 12px;
 }
 .entry p { font-size: 18px; line-height: 1.95; color: var(--parchment-soft); margin: 0 0 18px; max-width: 44ch; }
 .go {
-  font-family: var(--kufi); font-size: 16px; color: var(--brass);
+  font-family: var(--font); font-size: 16px; color: var(--brass);
   border-bottom: 1px solid transparent; transition: border-color 0.3s;
 }
 .entry a:hover .go, .entry a:focus-visible .go { border-bottom-color: var(--brass); }
