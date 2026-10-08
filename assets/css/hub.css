@@ -1,0 +1,120 @@
+/* ---------- Hero: a live armillary sphere ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh; min-height: 100svh;
+  display: grid; align-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse 70% 80% at 28% 50%, #101a44 0%, var(--night) 70%);
+}
+#sky { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-text {
+  position: relative; z-index: 1;
+  padding: 0 clamp(24px, 8vw, 128px);
+  max-width: 720px;
+}
+.mark {
+  font-family: var(--kufi); font-weight: 700;
+  font-size: clamp(96px, 17vw, 220px); line-height: 1;
+  margin: 0 0 0.1em; color: var(--parchment);
+  text-shadow: 0 4px 60px rgba(7, 11, 29, 0.9);
+}
+.lede {
+  font-size: clamp(19px, 1.7vw, 23px); line-height: 1.95;
+  color: var(--parchment-soft); max-width: 34ch; margin: 0 0 2em;
+  text-shadow: 0 2px 30px rgba(7, 11, 29, 0.95);
+}
+.enter {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--kufi); font-size: 18px; color: var(--brass-hi);
+  text-decoration: none; padding: 10px 0;
+  border-bottom: 1px solid var(--brass-line);
+}
+.enter::after {
+  content: ""; width: 8px; height: 8px;
+  border-bottom: 1.5px solid currentColor; border-left: 1.5px solid currentColor;
+  transform: rotate(-45deg) translate(2px, -2px);
+}
+.enter:hover { border-bottom-color: var(--brass-hi); }
+
+/* ---------- Catalog: entries hung on a scale ruler ---------- */
+.catalog {
+  max-width: 1200px; margin: 0 auto;
+  padding: clamp(72px, 10vw, 140px) clamp(20px, 4vw, 48px) 40px;
+}
+.catalog-intro {
+  font-size: 19px; color: var(--dust); max-width: 46ch;
+  margin: 0 0 clamp(32px, 5vw, 64px); padding-right: 156px;
+}
+.ruler { list-style: none; margin: 0; padding: 0; position: relative; }
+/* the instrument scale: a brass line with fine graduations */
+.ruler::before {
+  content: ""; position: absolute; top: 0; bottom: 0; right: 64px; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--brass-line) 4%, var(--brass-line) 92%, transparent);
+}
+.ruler::after {
+  content: ""; position: absolute; top: 2%; bottom: 10%; right: 60px; width: 9px;
+  background: repeating-linear-gradient(to bottom, var(--brass-faint) 0 1px, transparent 1px 18px);
+  pointer-events: none;
+}
+.entry a {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center; gap: clamp(24px, 3.5vw, 52px);
+  padding: clamp(28px, 4vw, 52px) 0;
+  text-decoration: none; color: inherit;
+}
+.mag {
+  position: relative; z-index: 1;
+  justify-self: center;
+  font-family: var(--kufi); font-size: 21px; color: var(--brass-hi);
+  background: var(--night); padding: 8px 4px; white-space: nowrap;
+}
+.mag sup { font-size: 0.62em; }
+.mag-inf { font-size: 40px; line-height: 1; padding: 4px 10px; }
+.entry figure {
+  margin: 0; aspect-ratio: 16 / 9; overflow: hidden;
+  border-radius: 12px; background: var(--lapis);
+  border: 1px solid var(--brass-faint);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+.entry img { display: block; width: 100%; height: 100%; object-fit: cover; transition: filter 0.4s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.entry a:hover img, .entry a:focus-visible img { filter: brightness(1.12) saturate(1.08); transform: scale(1.025); }
+.entry h2 {
+  font-family: var(--kufi); font-weight: 600;
+  font-size: clamp(28px, 3.2vw, 42px); line-height: 1.25;
+  margin: 0 0 12px;
+}
+.entry p { font-size: 18px; line-height: 1.95; color: var(--parchment-soft); margin: 0 0 18px; max-width: 44ch; }
+.go {
+  font-family: var(--kufi); font-size: 16px; color: var(--brass);
+  border-bottom: 1px solid transparent; transition: border-color 0.3s;
+}
+.entry a:hover .go, .entry a:focus-visible .go { border-bottom-color: var(--brass); }
+.entry a:focus-visible { outline-offset: 8px; border-radius: 14px; }
+
+.foot {
+  max-width: 1200px; margin: 0 auto;
+  padding: 40px clamp(20px, 4vw, 48px) 72px;
+  border-top: 1px solid var(--dust-faint);
+  color: var(--dust); font-size: 16px;
+}
+.foot p { margin: 0 0 8px; max-width: 70ch; }
+.foot a { color: var(--brass); }
+
+@media (max-width: 900px) {
+  .entry a { grid-template-columns: 76px minmax(0, 1fr); }
+  .entry figure { grid-column: 2; }
+  .entry-text { grid-column: 2; }
+  .mag { grid-row: 1 / span 2; align-self: start; margin-top: 18px; font-size: 17px; }
+  .mag-inf { font-size: 32px; }
+  .ruler::before { right: 38px; }
+  .ruler::after { right: 34px; }
+  .catalog-intro { padding-right: 0; }
+}
+@media (max-width: 560px) {
+  .hero-text { padding-top: 34vh; align-self: start; }
+  .entry a { grid-template-columns: 52px minmax(0, 1fr); gap: 18px; }
+  .ruler::before { right: 26px; }
+  .ruler::after { right: 22px; }
+  .mag { font-size: 14px; padding: 6px 0; }
+}

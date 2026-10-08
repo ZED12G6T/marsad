@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مرصد</title>
+<meta name="description" content="خمس تجارب علمية ثلاثية الأبعاد تُحسب لحظياً في متصفحك: ذرة الهيدروجين، كوكب يتولّد من العدم، ثقب أسود، تصادم مجرتين، وفراكتل لا ينتهي.">
+<meta property="og:title" content="مرصد">
+<meta property="og:description" content="خمس تجارب علمية ثلاثية الأبعاد تُحسب لحظياً في متصفحك.">
+<meta property="og:image" content="assets/thumbs/black-hole.jpg">
+<meta name="theme-color" content="#070b1d">
+<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/hub.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body class="hub">
+<header class="hero">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="hero-text">
+    <h1 class="mark">مَرصَد</h1>
+    <p class="lede">خمس تجارب علمية تُحسب أمامك لحظة بلحظة على كرت الشاشة. لا صور فيها ولا فيديو: كل ما تراه يخرج من معادلات الفيزياء والرياضيات، وتستطيع أن تغيّرها بيدك.</p>
+    <a class="enter" href="#catalog">ابدأ من الذرة</a>
+  </div>
+</header>
+
+<main id="catalog" class="catalog">
+  <p class="catalog-intro">المعروضات مرتّبة من الأصغر إلى الأكبر: من عُشر نانومتر إلى مئة ألف سنة ضوئية، ثم شكل لا حجم له.</p>
+  <ol class="ruler">
+    <li class="entry">
+      <a href="exhibits/atom/">
+        <span class="mag"><bdi class="num">10<sup>−10</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/atom.jpg" alt="سحابة احتمال ملوّنة لمدار إلكترون في ذرة الهيدروجين" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>ذرة الهيدروجين</h2>
+          <p>إلكترون واحد حول بروتون واحد، مرسوم من حل معادلة شرودنغر. ركّب حالتين فوق بعضهما وشاهد السحابة تتأرجح، فهذا التأرجح هو ما يُطلق الضوء.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/planet/">
+        <span class="mag"><bdi class="num">10<sup>7</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/planet.jpg" alt="كوكب بمحيطات وقارات وغيوم يحيط به غلاف جوي أزرق" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>كوكب من العدم</h2>
+          <p>قارات وجبال ومحيطات وغيوم تتولّد من الرياضيات، وغلاف جوي يحسب تشتت الضوء فيصير الغروب برتقالياً. انزل إلى السطح، أو ولّد كوكباً لم يره أحد قبلك.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/black-hole/">
+        <span class="mag"><bdi class="num">10<sup>10</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/black-hole.jpg" alt="ثقب أسود يلتف حوله قرص مضيء انحنى ضوؤه فوق الظل وتحته" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>الثقب الأسود</h2>
+          <p>كل بكسل يتتبّع شعاع ضوء ينحني حول الثقب حسب النسبية العامة. القرص الذي تراه فوقه هو نفسه الذي خلفه، والجهة الأسطع مقبلة نحوك بنصف سرعة الضوء.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="exhibits/galaxies/">
+        <span class="mag"><bdi class="num">10<sup>21</sup></bdi> م</span>
+        <figure><img src="assets/thumbs/galaxies.jpg" alt="مجرتان حلزونيتان تتمزقان أثناء التصادم وتخرج منهما ذيول من النجوم" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>تصادم مجرتين</h2>
+          <p>ربع مليون نجمة، أو مليون إن احتمل جهازك، تتحرك بالجاذبية وحدها. أذرع حلزونية تتمزق، وذيول من النجوم طولها مئات آلاف السنين الضوئية.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+    <li class="entry entry-last">
+      <a href="exhibits/fractal/">
+        <span class="mag mag-inf">∞</span>
+        <figure><img src="assets/thumbs/fractal.jpg" alt="شكل مندلبلب النحاسي بتفاصيل متكررة لا تنتهي" width="1280" height="720" loading="lazy"></figure>
+        <div class="entry-text">
+          <h2>فراكتل لا ينتهي</h2>
+          <p>أشكال ثلاثية الأبعاد من معادلة سطر واحد. انقر مرتين على أي نتوء لتنغمس فيه، وستجد تحته عالماً بنفس التعقيد، مهما قرّبت.</p>
+          <span class="go">افتح التجربة</span>
+        </div>
+      </a>
+    </li>
+  </ol>
+</main>
+
+<footer class="foot">
+  <p>تحتاج التجارب متصفحاً يدعم <bdi>WebGL2</bdi>، وأجملها على كمبيوتر. كل تجربة تضبط دقتها تلقائياً حسب قوة جهازك، وفي كل واحدة زر «عن هذه التجربة» يشرح العلم وراءها.</p>
+  <p><a href="https://github.com/" id="repo-link">الكود مفتوح على GitHub</a></p>
+</footer>
+<script type="module" src="assets/js/hub.js"></script>
+</body>
+</html>
